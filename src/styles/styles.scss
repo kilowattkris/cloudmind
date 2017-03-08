@@ -1,0 +1,120 @@
+/* Variables */
+$cloud-blue: #5062ad;
+$btn-blue: #4961ac;
+$light-blue: #a3c7e9;
+$lightest-pink: #f8eded;
+$white: #fff;
+$cloud-gradient: -webkit-linear-gradient(top, $cloud-blue, $light-blue, $lightest-pink);
+
+$btn-font: 'Roboto', sans-serif;
+$header-font: 'Varela Round', sans-serif;
+
+/* Mixins */
+@mixin full-size{
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flex{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-wrap{
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin flex-align-center{
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@mixin flex-col{
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin flex-justify-center{
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin full-background-image{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin login-gradient{
+    background-image: -webkit-linear-gradient(270deg, #5062ad 29%, #a3c7e9 89%, #f8eded), -webkit-linear-gradient(270deg, #5062ad, #6875b6 22%, #b6b6d4 72%, #f8eded);
+    background-image: linear-gradient(180deg, #5062ad 29%, #a3c7e9 89%, #f8eded), linear-gradient(180deg, #5062ad, #6875b6 22%, #b6b6d4 72%, #f8eded);
+}
+
+/* Component Classes */
+
+.cm-btn-default{
+    background-color: $btn-blue !important;
+    font-family: $btn-font !important;
+    padding: 3px !important;
+    border-radius: 18px !important;
+    border: none;
+    color: #fff;
+}
+
+/* Styles */
+html{
+  @include full-size;
+}
+
+body {
+  @include full-size;
+  @include full-background-image;
+  @include login-gradient;
+  font-size: 14px;
+  font-family: $header-font;
+  line-height: 1.4em;
+  color: $white;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;;
+}
+
+h1{
+    font-size: 60px;
+}
+
+h2{
+    font-size: 36px;
+}
+
+h3{
+    font-size: 24px;
+}
+
+h4{
+    font-size: 18px;
+}
+
+#app{
+  @include full-size;
+  @include flex;
+  @include flex-wrap;
+  @include flex-justify-center;
+  @include flex-align-center;
+  text-align: center;
+}
+
+.login-logo{
+    height: 80px;
+}

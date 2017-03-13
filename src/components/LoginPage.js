@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {LOGO_PATH} from '../constants/mediaConsts';
 import Logo from './Logo';
 import LoginForm from './LoginForm';
 

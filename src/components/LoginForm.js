@@ -1,30 +1,35 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const LoginForm = () => {
-  return (
-    <form>
-        <label htmlFor="userName">Username</label>
-        <input type="text"
-            name="userName"
-            className="login-form-username"
-            placeholder="Username"
-            ref="userName"
-            value={this.props.loginInfo.userName} />
-        <br/>
+import CMInput from './CMInput';
 
-        <label htmlFor="password">Password</label>
-        <input type="text"
-            name="password"
-            className="login-form-password"
-            placeholder="Password"
-            ref="password"
-            value={this.props.loginInfo.password}  />
-        <br/>
+import {ICON_PERSON} from '../constants/iconNames';
+import {ICON_LOCK} from '../constants/iconNames';
 
-        <input type="submit" value="Login" className="cm-btn-default" />
-    </form>
-  );
-};
+var LoginForm = React.createClass({
+  render: function(){
+      return (
+        <form>
+            <CMInput
+                label={ICON_PERSON}
+                name="userName"
+                className="form-input"
+                placeholder="Username"
+                onChange={this.props.onChange}
+                value={this.props.loginInfo.userName} />
+            <br/>
+            <CMInput
+                label={ICON_LOCK}
+                name="password"
+                className="form-input"
+                placeholder="Password"
+                onChange={this.props.onChange}
+                value={this.props.loginInfo.password}  />
+            <br/>
+            <input type="submit" value="Login" className="cm-btn-default" onClick={this.props.onSubmit} />
+        </form>
+        );
+    }
+});
 
 export default LoginForm;

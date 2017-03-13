@@ -1,9 +1,9 @@
 import React from 'react';
-import {LOGO_PATH} from '../constants/mediaConsts';
+import img from '../assets/images/logo.svg';
 
 const Logo = () => {
   return (
-    <img src={LOGO_PATH} />
+    <img src={img} />
   );
 };
 

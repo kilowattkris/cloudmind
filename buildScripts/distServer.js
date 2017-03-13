@@ -5,7 +5,7 @@ import compression from 'compression';
 
 /*eslint-disable no-console*/
 
-const port = 3000;
+const port = 5000;
 const app = express();
 
 app.use(compression());
@@ -15,11 +15,11 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-// app.get('/users', function(req, res){
-//     res.json([
-//         {'id': 1, 'firstName': 'kristine', 'email': 'kristine.tomlinson@gmail.com'}
-//     ]);
-// });
+app.get('/users', function(req, res){
+    res.json([
+        {'id': 1, 'firstName': 'kristine', 'email': 'kristine.tomlinson@gmail.com'}
+    ]);
+});
 
 app.listen(port, function(err){
     if(err){

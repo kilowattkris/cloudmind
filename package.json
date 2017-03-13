@@ -1,10 +1,10 @@
 {
-  "name": "cloud-mind",
+  "name": "CM",
   "version": "1.0.0",
   "description": "A mood tracking app",
   "scripts": {
       "prestart" : "babel-node buildScripts/startMessage.js",
-      "start" : "npm-run-all --parallel open:src test:watch",
+      "start" : "npm-run-all --parallel open:src test:watch start-mockapi",
       "open:src" : "babel-node buildScripts/srcServer.js",
       "lint": "esw webpack.config.*, src, buildScripts",
       "lint:watch": "npm run lint -- --watch",
@@ -17,7 +17,7 @@
       "pre-start-mockapi": "npm run generate-mock-data",
       "start-mockapi": "json-server --watch src/api/db.json --port 3001",
       "clean-dist": "rimraf ./dist && mkdir dist",
-      "prebuild": "npm-run-all clean-dist test lint",
+      "prebuild": "npm-run-all clean-dist test",
       "build": "babel-node buildScripts/build.js",
       "postbuild": "babel-node buildScripts/distServer.js",
       "deploy": "surge ./dist"
@@ -72,6 +72,7 @@
     "json-server": "0.8.22",
     "json-loader": "0.5.4",
     "localtunnel": "1.8.1",
+    "material-design-icons": "3.0.1",
     "material-ui": "0.17.0",
     "mockdate": "2.0.1",
     "mocha": "3.1.2",

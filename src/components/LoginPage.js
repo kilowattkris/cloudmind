@@ -16,13 +16,16 @@ var LoginPage = React.createClass({
     this.state.loginInfo[field] = value;
     return this.setState({loginInfo: this.state.loginInfo});
   },
+  loginUser: function(event){
+      event.preventDefault();
+  },
   render: function (){
     return (
         <div>
         {/*<img className="login-logo" src={LOGO_PATH} />*/}
         <Logo className="login-logo" />
         <h1>Cloud Mind</h1>
-        <LoginForm loginInfo={this.state.loginInfo}/>
+        <LoginForm loginInfo={this.state.loginInfo} onChange={this.setLoginState} onSubmit={this.loginUser}/>
         <br/>
         <Link to="./forgot-password">Forgot Password?</Link>
         <br/>
